@@ -1,0 +1,27 @@
+name: ChainsawRPG
+version: "${project.version}"
+main: fr.chainsawrpg.ChainsawPlugin
+api-version: "26.3"
+description: RPG Chainsaw Man - contrats demoniaques, competences, boss et factions
+authors: [ChainsawRPG]
+commands:
+  chainsaw:
+    description: Menu principal et sous-commandes ChainsawRPG
+    aliases: [cs, csm]
+    usage: /<command> [sous-commande]
+permissions:
+  chainsawman.use:
+    description: Utiliser le plugin (menus, competences)
+    default: true
+  chainsawman.admin:
+    description: Commandes d administration
+    default: op
+  chainsawman.bypass.npc:
+    description: Ouvrir le menu des contrats sans PNJ
+    default: op
+  chainsawman.bypass.cooldown:
+    description: Ignorer les cooldowns
+    default: false
+  chainsawman.bypass.protection:
+    description: Utiliser les competences dans les zones protegees
+    default: false

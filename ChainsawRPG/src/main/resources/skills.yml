@@ -1,0 +1,1950 @@
+# Compétences. slot 1-3 = normales, 4 = ultime, 0 = passif. damage-* : dégâts PAR COUP (par SECONDE pour les ZONE).
+# range en blocs, radius en blocs, duration en secondes. params : voir docs/GUIDE_CONFIGURATION.md
+skills:
+  fox_a:
+    demon: fox
+    slot: 1
+    type: SUMMON_BITE
+    name: Morsure
+    description: Invoque une tête de renard qui mord la cible visée.
+    damage-pvp: 5
+    damage-pve: 8
+    range: 14
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:255,140,30:1.4
+    sound: entity.fox.bite
+    tags:
+    - summon
+    params:
+      travel: 6
+      knockback: 0.3
+  fox_b:
+    demon: fox
+    slot: 2
+    type: ROOT
+    name: Dévoration
+    description: 'Capture l''ennemi dans la gueule du renard : il est immobilisé et subit des dégâts.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 10
+    radius: 0.0
+    duration: 2.5
+    max-targets: 1
+    particle: DUST:255,140,30:1.4
+    sound: entity.fox.bite
+    tags:
+    - summon
+    params:
+      mode: SINGLE
+      dot: 1.6
+  fox_c:
+    demon: fox
+    slot: 3
+    type: MULTI_HIT
+    name: Invocation rapide
+    description: Plusieurs morsures successives sur les ennemis proches.
+    damage-pvp: 3
+    damage-pve: 5
+    range: 12
+    radius: 0.0
+    duration: 0.0
+    max-targets: 3
+    particle: DUST:255,140,30:1.4
+    sound: entity.fox.bite
+    tags:
+    - summon
+    params:
+      mode: NEAREST
+      hits: 4
+      interval: 5
+  fox_ult:
+    demon: fox
+    slot: 4
+    type: AOE_BURST
+    name: KON
+    description: Une immense tête de renard s'abat sur la zone visée et frappe tous les ennemis.
+    damage-pvp: 11
+    damage-pve: 20
+    range: 20
+    radius: 7
+    duration: 0.0
+    max-targets: 8
+    particle: DUST:255,140,30:1.4
+    sound: entity.fox.bite
+    tags:
+    - summon
+    params:
+      center: AIM
+      delay: 16
+      style: HEAD
+      knockback: 0.8
+      up: 0.5
+  fox_passive:
+    demon: fox
+    slot: 0
+    type: PASSIVE
+    name: Maître des invocations
+    description: Les dégâts de tes invocations augmentent de 25 %.
+    params:
+      summon-bonus: 0.25
+  ghost_a:
+    demon: ghost
+    slot: 1
+    type: RAY_STRIKE
+    name: Main invisible
+    description: Frappe un ennemi à distance.
+    damage-pvp: 4.5
+    damage-pve: 7
+    range: 16
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:230,230,255:1.2
+    sound: entity.phantom.swoop
+    params:
+      knockback: 0.5
+  ghost_b:
+    demon: ghost
+    slot: 2
+    type: ROOT
+    name: Étreinte
+    description: Une main fantôme immobilise la cible.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 12
+    radius: 0.0
+    duration: 2.5
+    max-targets: 1
+    particle: DUST:230,230,255:1.2
+    sound: entity.phantom.swoop
+    params:
+      mode: SINGLE
+  ghost_c:
+    demon: ghost
+    slot: 3
+    type: MULTI_HIT
+    name: Poing fantôme
+    description: Enchaîne plusieurs coups invisibles sur la cible.
+    damage-pvp: 3
+    damage-pve: 5
+    range: 10
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:230,230,255:1.2
+    sound: entity.phantom.swoop
+    params:
+      mode: TARGET
+      hits: 4
+      interval: 4
+      knockback-last: 0.6
+  ghost_ult:
+    demon: ghost
+    slot: 4
+    type: MULTI_HIT
+    name: Main fantôme
+    description: Plusieurs mains attaquent tous les ennemis proches.
+    damage-pvp: 4.5
+    damage-pve: 8
+    range: 9
+    radius: 9
+    duration: 0.0
+    max-targets: 6
+    particle: DUST:230,230,255:1.2
+    sound: entity.phantom.swoop
+    params:
+      mode: AREA
+      hits: 6
+      interval: 6
+      style: COLUMN
+  ghost_passive:
+    demon: ghost
+    slot: 0
+    type: PASSIVE
+    name: Légèreté spectrale
+    description: Tu ne subis aucun dégât de chute.
+    params:
+      resist-causes:
+        FALL: 0
+  curse_a:
+    demon: curse
+    slot: 1
+    type: MARK
+    name: Marque maudite
+    description: Pose deux marques sur la cible visée (6 maximum).
+    damage-pvp: 0
+    damage-pve: 0
+    range: 16
+    radius: 0.0
+    duration: 20
+    max-targets: 1
+    particle: DUST:140,0,160:1.3
+    sound: entity.wither.ambient
+    params:
+      status: curse
+      stacks: 2
+      max-stacks: 6
+  curse_b:
+    demon: curse
+    slot: 2
+    type: MULTI_HIT
+    name: Triple frappe
+    description: Trois coups successifs sur la cible.
+    damage-pvp: 3.5
+    damage-pve: 6
+    range: 12
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:140,0,160:1.3
+    sound: entity.wither.ambient
+    params:
+      mode: TARGET
+      hits: 3
+      interval: 5
+  curse_c:
+    demon: curse
+    slot: 3
+    type: MARK_STRIKE
+    name: Malédiction
+    description: Dégâts supplémentaires à une cible marquée (+30 % par marque).
+    damage-pvp: 5
+    damage-pve: 9
+    range: 16
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:140,0,160:1.3
+    sound: entity.wither.ambient
+    params:
+      status: curse
+      consume: false
+      min-stacks: 1
+      per-stack: 0.3
+      base-mult: 1.0
+  curse_ult:
+    demon: curse
+    slot: 4
+    type: MARK_STRIKE
+    name: Sentence
+    description: Frappe dévastatrice sur une cible portant au moins 5 marques. Consomme les marques.
+    damage-pvp: 9
+    damage-pve: 16
+    range: 18
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:140,0,160:1.3
+    sound: entity.wither.ambient
+    params:
+      status: curse
+      consume: true
+      min-stacks: 5
+      per-stack: 0.2
+      base-mult: 1.2
+  curse_passive:
+    demon: curse
+    slot: 0
+    type: PASSIVE
+    name: Attaques maudites
+    description: Tes attaques appliquent progressivement des marques.
+    params:
+      mark-on-hit: 1
+      mark-status: curse
+  snake_a:
+    demon: snake
+    slot: 1
+    type: SUMMON_BITE
+    name: Morsure
+    description: Un serpent mord la cible et l'empoisonne.
+    damage-pvp: 4
+    damage-pve: 7
+    range: 12
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:60,200,60:1.3
+    sound: entity.cave_spider.hiss
+    params:
+      travel: 6
+      effects:
+      - poison:80:0
+  snake_b:
+    demon: snake
+    slot: 2
+    type: ROOT
+    name: Avalement
+    description: 'Avale temporairement un ennemi : immobilisé et blessé.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 10
+    radius: 0.0
+    duration: 2.5
+    max-targets: 1
+    particle: DUST:60,200,60:1.3
+    sound: entity.cave_spider.hiss
+    params:
+      mode: SINGLE
+      dot: 1.2
+  snake_c:
+    demon: snake
+    slot: 3
+    type: AOE_BURST
+    name: Écrasement
+    description: Le serpent s'abat sur une zone.
+    damage-pvp: 5.5
+    damage-pve: 9
+    range: 14
+    radius: 4
+    duration: 0.0
+    max-targets: 5
+    particle: DUST:60,200,60:1.3
+    sound: entity.cave_spider.hiss
+    params:
+      center: AIM
+      delay: 8
+      style: SLAM
+      knockback: 0.5
+      up: 0.4
+  snake_ult:
+    demon: snake
+    slot: 4
+    type: PROJECTILE
+    name: Serpent géant
+    description: Un serpent colossal traverse le champ de bataille et frappe tout sur son passage.
+    damage-pvp: 9
+    damage-pve: 16
+    range: 30
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:60,200,60:1.3
+    sound: entity.cave_spider.hiss
+    params:
+      mode: FORWARD
+      speed: 1.1
+      width: 2.2
+      pierce: 99
+      life: 28
+      knockback: 0.8
+  snake_passive:
+    demon: snake
+    slot: 0
+    type: PASSIVE
+    name: Peau écailleuse
+    description: Immunité au poison.
+    params:
+      immune-effects:
+      - poison
+      resist-causes:
+        POISON: 0
+  future_a:
+    demon: future
+    slot: 1
+    type: REVEAL
+    name: Vision future
+    description: Révèle les ennemis proches (visible par toi seul).
+    damage-pvp: 0
+    damage-pve: 0
+    range: 24
+    radius: 24
+    duration: 8
+    max-targets: 1
+    particle: END_ROD
+    sound: block.amethyst_block.chime
+  future_b:
+    demon: future
+    slot: 2
+    type: BUFF_SELF
+    name: Esquive prédictive
+    description: Esquive automatiquement la prochaine attaque.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 8
+    max-targets: 1
+    particle: END_ROD
+    sound: block.amethyst_block.chime
+    params:
+      dodge: 1
+  future_c:
+    demon: future
+    slot: 3
+    type: REVEAL
+    name: Prémonition
+    description: Détecte les joueurs proches, avec leur direction.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 40
+    radius: 40
+    duration: 10
+    max-targets: 1
+    particle: END_ROD
+    sound: block.amethyst_block.chime
+    params:
+      players-only: true
+      arrows: true
+  future_ult:
+    demon: future
+    slot: 4
+    type: ZONE
+    name: Le futur m'appartient
+    description: Ralentit fortement les ennemis autour de toi et t'accélère.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 10
+    radius: 10
+    duration: 8
+    max-targets: 10
+    particle: END_ROD
+    sound: block.amethyst_block.chime
+    params:
+      center: SELF
+      follow: true
+      tick: 10
+      style: DOME
+      effects:
+      - slowness:30:2
+      self-effects:
+      - speed:30:2
+  future_passive:
+    demon: future
+    slot: 0
+    type: PASSIVE
+    name: Instinct prémonitoire
+    description: 8 % de chances d'esquiver une attaque.
+    params:
+      dodge-chance: 0.08
+  mold_a:
+    demon: mold
+    slot: 1
+    type: EFFECT_AREA
+    name: Infection
+    description: 'Infecte la cible : poison et dégâts sur la durée.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 14
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:90,150,40:1.3
+    sound: entity.slime.squish
+    params:
+      effects:
+      - poison:100:0
+      status: infected
+      status-seconds: 8
+      status-power: 1.0
+  mold_b:
+    demon: mold
+    slot: 2
+    type: EFFECT_AREA
+    name: Propagation
+    description: Transmet l'infection des cibles infectées aux ennemis proches d'elles.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 18
+    radius: 0.0
+    duration: 0.0
+    max-targets: 4
+    particle: DUST:90,150,40:1.3
+    sound: entity.slime.squish
+    params:
+      spread: true
+      status: infected
+      effects:
+      - poison:80:0
+      spread-radius: 5
+      status-seconds: 8
+      status-power: 1.0
+  mold_c:
+    demon: mold
+    slot: 3
+    type: ZONE
+    name: Zone contaminée
+    description: Une zone qui ralentit et ronge les ennemis.
+    damage-pvp: 1.0
+    damage-pve: 2.0
+    range: 16
+    radius: 5
+    duration: 8
+    max-targets: 6
+    particle: DUST:90,150,40:1.3
+    sound: entity.slime.squish
+    params:
+      center: AIM
+      tick: 10
+      style: RING
+      effects:
+      - slowness:30:1
+  mold_ult:
+    demon: mold
+    slot: 4
+    type: EFFECT_AREA
+    name: Épidémie
+    description: Infecte tous les ennemis dans une grande zone.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 14
+    radius: 14
+    duration: 0.0
+    max-targets: 12
+    particle: DUST:90,150,40:1.3
+    sound: entity.slime.squish
+    params:
+      center: SELF
+      status: infected
+      effects:
+      - poison:120:1
+      - slowness:80:0
+      status-seconds: 10
+      status-power: 1.5
+  mold_passive:
+    demon: mold
+    slot: 0
+    type: PASSIVE
+    name: Putréfaction
+    description: Les dégâts d'infection augmentent progressivement.
+    params:
+      infect-ramp: 0.15
+  stone_a:
+    demon: stone
+    slot: 1
+    type: ROOT
+    name: Pétrification
+    description: Immobilise un ennemi.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 12
+    radius: 0.0
+    duration: 2.5
+    max-targets: 1
+    particle: BLOCK:STONE
+    sound: block.stone.break
+    params:
+      mode: SINGLE
+  stone_b:
+    demon: stone
+    slot: 2
+    type: CAGE
+    name: Prison de pierre
+    description: Enferme la cible dans une cage temporaire.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 12
+    radius: 0.0
+    duration: 5
+    max-targets: 1
+    particle: BLOCK:STONE
+    sound: block.stone.break
+    params:
+      material: STONE_BRICKS
+  stone_c:
+    demon: stone
+    slot: 3
+    type: PROJECTILE
+    name: Éboulement
+    description: Des blocs de pierre s'écrasent sur la zone visée.
+    damage-pvp: 4
+    damage-pve: 7
+    range: 16
+    radius: 4
+    duration: 0.0
+    max-targets: 6
+    particle: BLOCK:STONE
+    sound: block.stone.break
+    params:
+      mode: SKY
+      count: 8
+      stagger: 3
+      speed: 1.4
+      height: 9
+      block: STONE
+      explode: 2.0
+      explode-mult: 1.0
+      life: 80
+  stone_ult:
+    demon: stone
+    slot: 4
+    type: ROOT
+    name: Jugement de pierre
+    description: Pétrifie plusieurs ennemis dans une zone.
+    damage-pvp: 6
+    damage-pve: 10
+    range: 20
+    radius: 7
+    duration: 3
+    max-targets: 8
+    particle: BLOCK:STONE
+    sound: block.stone.break
+    params:
+      mode: AREA
+      center: AIM
+  stone_passive:
+    demon: stone
+    slot: 0
+    type: PASSIVE
+    name: Peau de pierre
+    description: Réduit tous les dégâts reçus de 12 %.
+    params:
+      resist-all: 0.12
+  octopus_a:
+    demon: octopus
+    slot: 1
+    type: RAY_STRIKE
+    name: Tentacule
+    description: Un tentacule frappe un ennemi à distance.
+    damage-pvp: 5
+    damage-pve: 8
+    range: 14
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:40,40,80:1.4
+    sound: entity.squid.squirt
+    params:
+      knockback: 0.2
+  octopus_b:
+    demon: octopus
+    slot: 2
+    type: RAY_STRIKE
+    name: Capture
+    description: Attire un ennemi vers toi.
+    damage-pvp: 2
+    damage-pve: 4
+    range: 14
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:40,40,80:1.4
+    sound: entity.squid.squirt
+    params:
+      pull: 1.3
+  octopus_c:
+    demon: octopus
+    slot: 3
+    type: EFFECT_AREA
+    name: Encre
+    description: Aveugle et ralentit les ennemis dans une zone.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 14
+    radius: 6
+    duration: 0.0
+    max-targets: 8
+    particle: SQUID_INK
+    sound: entity.squid.squirt
+    params:
+      center: AIM
+      effects:
+      - blindness:80:0
+      - slowness:60:0
+  octopus_ult:
+    demon: octopus
+    slot: 4
+    type: MULTI_HIT
+    name: Kraken
+    description: Une pieuvre immense frappe plusieurs ennemis à la suite.
+    damage-pvp: 4.5
+    damage-pve: 9
+    range: 10
+    radius: 10
+    duration: 0.0
+    max-targets: 8
+    particle: DUST:40,40,80:1.4
+    sound: entity.squid.squirt
+    params:
+      mode: AREA
+      hits: 6
+      interval: 6
+      style: COLUMN
+      knockback-last: 0.7
+  octopus_passive:
+    demon: octopus
+    slot: 0
+    type: PASSIVE
+    name: Nageur
+    description: Vitesse augmentée dans l'eau.
+    params:
+      water-speed-amp: 1
+  darkness_a:
+    demon: darkness
+    slot: 1
+    type: EFFECT_AREA
+    name: Obscurité
+    description: Plonge une zone dans le noir.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 18
+    radius: 8
+    duration: 0.0
+    max-targets: 10
+    particle: DUST:25,0,40:1.6
+    sound: entity.warden.heartbeat
+    params:
+      center: AIM
+      effects:
+      - darkness:120:0
+      - blindness:40:0
+  darkness_b:
+    demon: darkness
+    slot: 2
+    type: MULTI_HIT
+    name: Bras des ténèbres
+    description: Des bras d'ombre frappent plusieurs ennemis.
+    damage-pvp: 4.5
+    damage-pve: 8
+    range: 8
+    radius: 8
+    duration: 0.0
+    max-targets: 5
+    particle: DUST:25,0,40:1.6
+    sound: entity.warden.heartbeat
+    params:
+      mode: AREA
+      hits: 4
+      interval: 6
+      style: COLUMN
+  darkness_c:
+    demon: darkness
+    slot: 3
+    type: ZONE
+    name: Gravité
+    description: Attire les ennemis vers un point.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 18
+    radius: 6
+    duration: 2.5
+    max-targets: 8
+    particle: DUST:25,0,40:1.6
+    sound: entity.warden.heartbeat
+    params:
+      center: AIM
+      tick: 5
+      style: DARK
+      pull: 0.45
+  darkness_ult:
+    demon: darkness
+    slot: 4
+    type: ZONE
+    name: Dimension noire
+    description: Une zone sombre où les ennemis subissent dégâts et ralentissements.
+    damage-pvp: 2.5
+    damage-pve: 5
+    range: 16
+    radius: 9
+    duration: 8
+    max-targets: 10
+    particle: DUST:25,0,40:1.6
+    sound: entity.warden.heartbeat
+    params:
+      center: AIM
+      tick: 10
+      style: DARK
+      effects:
+      - slowness:30:1
+      - darkness:40:0
+  darkness_passive:
+    demon: darkness
+    slot: 0
+    type: PASSIVE
+    name: Enfant de la nuit
+    description: Vision nocturne et immunité à la cécité, aux ténèbres et à la nausée.
+    params:
+      perm-effects:
+      - night_vision:100:0
+      immune-effects:
+      - blindness
+      - darkness
+      - nausea
+  gun_a:
+    demon: gun
+    slot: 1
+    type: PROJECTILE
+    name: Tir rapide
+    description: Tire un projectile très rapide.
+    damage-pvp: 5.5
+    damage-pve: 9
+    range: 40
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:255,255,190:0.8
+    sound: entity.firework_rocket.blast
+    params:
+      mode: FORWARD
+      speed: 4.0
+      width: 0.3
+      life: 10
+  gun_b:
+    demon: gun
+    slot: 2
+    type: PROJECTILE
+    name: Rafale
+    description: Tire sur plusieurs cibles à la fois.
+    damage-pvp: 3
+    damage-pve: 5
+    range: 24
+    radius: 0.0
+    duration: 0.0
+    max-targets: 4
+    particle: DUST:255,255,190:0.8
+    sound: entity.firework_rocket.blast
+    params:
+      mode: AUTO
+      count: 5
+      stagger: 3
+      speed: 3.5
+      width: 0.3
+      life: 7
+  gun_c:
+    demon: gun
+    slot: 3
+    type: MARK
+    name: Verrouillage
+    description: 'Marque automatiquement les ennemis proches : ils subissent +20 % de tes dégâts.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 20
+    radius: 20
+    duration: 8
+    max-targets: 6
+    particle: DUST:255,255,190:0.8
+    sound: entity.firework_rocket.blast
+    params:
+      status: lock
+      stacks: 1
+      max-stacks: 1
+  gun_ult:
+    demon: gun
+    slot: 4
+    type: PROJECTILE
+    name: Pluie de balles
+    description: Une grande rafale de projectiles.
+    damage-pvp: 2.5
+    damage-pve: 4.5
+    range: 26
+    radius: 0.0
+    duration: 0.0
+    max-targets: 6
+    particle: DUST:255,255,190:0.8
+    sound: entity.firework_rocket.blast
+    params:
+      mode: AUTO
+      count: 24
+      stagger: 2
+      speed: 3.5
+      width: 0.35
+      life: 8
+      spread: 8
+      allow-empty: true
+  gun_passive:
+    demon: gun
+    slot: 0
+    type: PASSIVE
+    name: Tireur d'élite
+    description: Portée +20 %, visée assistée élargie, +20 % de dégâts sur les cibles verrouillées.
+    params:
+      range-bonus: 0.2
+      aim-bonus: 3
+      marked-bonus: 0.2
+      marked-status: lock
+  punishment_a:
+    demon: punishment
+    slot: 1
+    type: MARK
+    name: Jugement
+    description: Marque un ennemi comme coupable.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 16
+    radius: 0.0
+    duration: 15
+    max-targets: 1
+    particle: DUST:255,215,0:1.2
+    sound: block.bell.use
+    params:
+      status: judge
+      stacks: 1
+      max-stacks: 1
+  punishment_b:
+    demon: punishment
+    slot: 2
+    type: MARK_STRIKE
+    name: Sentence
+    description: Dégâts supplémentaires sur une cible marquée.
+    damage-pvp: 5
+    damage-pve: 9
+    range: 16
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:255,215,0:1.2
+    sound: block.bell.use
+    params:
+      status: judge
+      consume: false
+      min-stacks: 1
+      per-stack: 0.5
+      base-mult: 1.0
+  punishment_c:
+    demon: punishment
+    slot: 3
+    type: ZONE
+    name: Zone punitive
+    description: Ralentit les ennemis proches.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 14
+    radius: 6
+    duration: 6
+    max-targets: 6
+    particle: DUST:255,215,0:1.2
+    sound: block.bell.use
+    params:
+      center: AIM
+      tick: 10
+      style: RING
+      effects:
+      - slowness:30:1
+  punishment_ult:
+    demon: punishment
+    slot: 4
+    type: MARK_STRIKE
+    name: Verdict
+    description: Frappe tous les ennemis marqués à portée.
+    damage-pvp: 8
+    damage-pve: 15
+    range: 24
+    radius: 0.0
+    duration: 0.0
+    max-targets: 8
+    particle: DUST:255,215,0:1.2
+    sound: block.bell.use
+    params:
+      status: judge
+      consume: true
+      all: true
+      min-stacks: 1
+      per-stack: 0.0
+      base-mult: 1.2
+  punishment_passive:
+    demon: punishment
+    slot: 0
+    type: PASSIVE
+    name: Loi implacable
+    description: Les ennemis marqués subissent 20 % de dégâts en plus.
+    params:
+      marked-bonus: 0.2
+      marked-status: judge
+  claw_a:
+    demon: claw
+    slot: 1
+    type: MELEE_ARC
+    name: Griffure
+    description: Attaque rapide en arc devant toi.
+    damage-pvp: 4.5
+    damage-pve: 7
+    range: 4.5
+    radius: 0.0
+    duration: 0.0
+    max-targets: 3
+    particle: CRIT
+    sound: entity.player.attack.sweep
+    params:
+      angle: 110
+      knockback: 0.3
+  claw_b:
+    demon: claw
+    slot: 2
+    type: MULTI_HIT
+    name: Déchiquetage
+    description: Combo de trois attaques.
+    damage-pvp: 3
+    damage-pve: 5
+    range: 5
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: entity.player.attack.sweep
+    params:
+      mode: TARGET
+      hits: 3
+      interval: 4
+  claw_c:
+    demon: claw
+    slot: 3
+    type: LEAP
+    name: Bond
+    description: Saute sur un ennemi et le frappe.
+    damage-pvp: 5
+    damage-pve: 8
+    range: 12
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: entity.player.attack.sweep
+    params:
+      mode: TARGET
+      speed: 1.5
+      knockback: 0.4
+  claw_ult:
+    demon: claw
+    slot: 4
+    type: MULTI_HIT
+    name: Prédateur
+    description: Enchaîne de nombreuses attaques rapides sur les ennemis proches.
+    damage-pvp: 2.5
+    damage-pve: 5
+    range: 6
+    radius: 6
+    duration: 0.0
+    max-targets: 4
+    particle: CRIT
+    sound: entity.player.attack.sweep
+    params:
+      mode: AREA
+      hits: 8
+      interval: 4
+  claw_passive:
+    demon: claw
+    slot: 0
+    type: PASSIVE
+    name: Instinct de chasseur
+    description: Vitesse d'attaque +25 %.
+    params:
+      attributes:
+        attack_speed: 0.25
+  knife_a:
+    demon: knife
+    slot: 1
+    type: PROJECTILE
+    name: Lame spectrale
+    description: Lance une lame magique.
+    damage-pvp: 4.5
+    damage-pve: 8
+    range: 28
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.throw
+    params:
+      mode: FORWARD
+      speed: 2.2
+      width: 0.5
+      life: 13
+      item: IRON_SWORD
+  knife_b:
+    demon: knife
+    slot: 2
+    type: PROJECTILE
+    name: Double lame
+    description: Lance deux lames successives.
+    damage-pvp: 3.5
+    damage-pve: 6.5
+    range: 28
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.throw
+    params:
+      mode: FORWARD
+      count: 2
+      stagger: 4
+      speed: 2.2
+      width: 0.5
+      life: 13
+      item: IRON_SWORD
+  knife_c:
+    demon: knife
+    slot: 3
+    type: PROJECTILE
+    name: Danse des lames
+    description: Éventail de projectiles.
+    damage-pvp: 2.5
+    damage-pve: 5
+    range: 20
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.throw
+    params:
+      mode: FORWARD
+      count: 7
+      fan: true
+      spread: 35
+      speed: 2.0
+      width: 0.4
+      life: 10
+  knife_ult:
+    demon: knife
+    slot: 4
+    type: PROJECTILE
+    name: Tempête de couteaux
+    description: Une pluie de lames s'abat sur la zone visée.
+    damage-pvp: 2.5
+    damage-pve: 4.5
+    range: 20
+    radius: 7
+    duration: 0.0
+    max-targets: 8
+    particle: CRIT
+    sound: item.trident.throw
+    params:
+      mode: SKY
+      count: 28
+      stagger: 1
+      speed: 1.6
+      height: 10
+      item: IRON_SWORD
+      explode: 1.6
+      explode-mult: 1.0
+      life: 80
+  knife_passive:
+    demon: knife
+    slot: 0
+    type: PASSIVE
+    name: Maître du corps à corps
+    description: +20 % de dégâts à moins de 4,5 blocs.
+    params:
+      close-range-bonus: 0.2
+      close-range-distance: 4.5
+  needle_a:
+    demon: needle
+    slot: 1
+    type: ROOT
+    name: Épinglage
+    description: Cloue un ennemi sur place.
+    damage-pvp: 2
+    damage-pve: 4
+    range: 14
+    radius: 0.0
+    duration: 2
+    max-targets: 1
+    particle: DUST:230,230,230:0.7
+    sound: block.chain.hit
+    params:
+      mode: SINGLE
+  needle_b:
+    demon: needle
+    slot: 2
+    type: ZONE
+    name: Pluie d'aiguilles
+    description: Une averse d'aiguilles sur une zone.
+    damage-pvp: 3.5
+    damage-pve: 6
+    range: 16
+    radius: 5
+    duration: 3
+    max-targets: 6
+    particle: DUST:230,230,230:0.7
+    sound: block.chain.hit
+    params:
+      center: AIM
+      tick: 5
+      style: RING
+  needle_c:
+    demon: needle
+    slot: 3
+    type: ZONE
+    name: Fil invisible
+    description: Un réseau de fils ralentit ceux qui le traversent.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 14
+    radius: 6
+    duration: 8
+    max-targets: 6
+    particle: DUST:230,230,230:0.7
+    sound: block.chain.hit
+    params:
+      center: AIM
+      tick: 10
+      style: THREADS
+      effects:
+      - slowness:30:1
+  needle_ult:
+    demon: needle
+    slot: 4
+    type: PROJECTILE
+    name: Mille aiguilles
+    description: Une quantité immense d'aiguilles.
+    damage-pvp: 2
+    damage-pve: 3.5
+    range: 22
+    radius: 8
+    duration: 0.0
+    max-targets: 8
+    particle: DUST:230,230,230:0.7
+    sound: block.chain.hit
+    params:
+      mode: SKY
+      count: 36
+      stagger: 1
+      speed: 1.8
+      height: 10
+      explode: 1.2
+      explode-mult: 1.0
+      life: 80
+  needle_passive:
+    demon: needle
+    slot: 0
+    type: PASSIVE
+    name: Paralysie
+    description: Tes attaques ralentissent brièvement l'ennemi.
+    params:
+      slow-on-hit-ticks: 40
+      slow-on-hit-amp: 0
+  mantis_a:
+    demon: mantis
+    slot: 1
+    type: MELEE_ARC
+    name: Faux
+    description: Attaque en arc de cercle.
+    damage-pvp: 5
+    damage-pve: 8
+    range: 5
+    radius: 0.0
+    duration: 0.0
+    max-targets: 4
+    particle: DUST:120,255,120:1.0
+    sound: item.axe.strip
+    params:
+      angle: 160
+      knockback: 0.3
+  mantis_b:
+    demon: mantis
+    slot: 2
+    type: MELEE_ARC
+    name: Découpe
+    description: Puissante attaque tranchante devant toi.
+    damage-pvp: 8
+    damage-pve: 13
+    range: 8
+    radius: 0.0
+    duration: 0.0
+    max-targets: 3
+    particle: DUST:120,255,120:1.0
+    sound: item.axe.strip
+    params:
+      angle: 25
+      knockback: 0.5
+      lunge: 0.6
+  mantis_c:
+    demon: mantis
+    slot: 3
+    type: LEAP
+    name: Saut prédateur
+    description: Bondit sur une cible.
+    damage-pvp: 6
+    damage-pve: 10
+    range: 14
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:120,255,120:1.0
+    sound: item.axe.strip
+    params:
+      mode: TARGET
+      speed: 1.6
+      knockback: 0.4
+  mantis_ult:
+    demon: mantis
+    slot: 4
+    type: AOE_BURST
+    name: Faucheuse
+    description: Attaque circulaire autour de toi.
+    damage-pvp: 9
+    damage-pve: 16
+    range: 6
+    radius: 6
+    duration: 0.0
+    max-targets: 8
+    particle: DUST:120,255,120:1.0
+    sound: item.axe.strip
+    params:
+      center: SELF
+      style: SPIN
+      knockback: 0.7
+      up: 0.4
+  mantis_passive:
+    demon: mantis
+    slot: 0
+    type: PASSIVE
+    name: Bond de la mante
+    description: +25 % de dégâts quand tu es en l'air ou après un saut.
+    params:
+      air-bonus: 0.25
+  fire_a:
+    demon: fire
+    slot: 1
+    type: PROJECTILE
+    name: Flammes
+    description: Lance une boule de feu.
+    damage-pvp: 5
+    damage-pve: 8
+    range: 30
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: FLAME
+    sound: entity.blaze.shoot
+    tags:
+    - fire
+    params:
+      mode: FORWARD
+      speed: 1.3
+      width: 0.7
+      life: 24
+      explode: 2.0
+      explode-mult: 0.6
+      fire-ticks: 60
+  fire_b:
+    demon: fire
+    slot: 2
+    type: AOE_BURST
+    name: Explosion
+    description: Une explosion de flammes.
+    damage-pvp: 6
+    damage-pve: 10
+    range: 16
+    radius: 5
+    duration: 0.0
+    max-targets: 6
+    particle: FLAME
+    sound: entity.blaze.shoot
+    tags:
+    - fire
+    params:
+      center: AIM
+      style: EXPLOSION
+      knockback: 0.7
+      up: 0.4
+      fire-ticks: 80
+  fire_c:
+    demon: fire
+    slot: 3
+    type: BUFF_SELF
+    name: Transformation
+    description: 'Ton corps s''embrase : aura de feu, vitesse, nouvelle apparence.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 3.5
+    duration: 12
+    max-targets: 4
+    particle: FLAME
+    sound: entity.blaze.shoot
+    tags:
+    - fire
+    params:
+      effects:
+      - speed:240:0
+      aura-damage: 3
+      aura-radius: 3.5
+      armor:
+      - LEATHER_HELMET
+      - LEATHER_CHESTPLATE
+      - LEATHER_LEGGINGS
+      - LEATHER_BOOTS
+      armor-color: 255,70,0
+  fire_ult:
+    demon: fire
+    slot: 4
+    type: BUFF_SELF
+    name: Éveil du feu
+    description: 'Forme démoniaque : aura brûlante, force, vitesse et résistance.'
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 5
+    duration: 20
+    max-targets: 8
+    particle: FLAME
+    sound: entity.blaze.shoot
+    tags:
+    - fire
+    params:
+      effects:
+      - speed:400:1
+      - strength:400:0
+      - resistance:400:0
+      aura-damage: 6
+      aura-radius: 5
+      armor:
+      - LEATHER_HELMET
+      - LEATHER_CHESTPLATE
+      - LEATHER_LEGGINGS
+      - LEATHER_BOOTS
+      armor-color: 255,20,0
+  fire_passive:
+    demon: fire
+    slot: 0
+    type: PASSIVE
+    name: Corps ardent
+    description: Immunité au feu et à la lave ; +20 % de dégâts de feu.
+    params:
+      resist-causes:
+        FIRE: 0
+        FIRE_TICK: 0
+        LAVA: 0
+        HOT_FLOOR: 0
+      fire-bonus: 0.2
+  blood_a:
+    demon: blood
+    slot: 1
+    type: PROJECTILE
+    name: Lance de sang
+    description: Une lance de sang perce la cible.
+    damage-pvp: 5.5
+    damage-pve: 9
+    range: 36
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: DUST:170,0,0:1.3
+    sound: entity.generic.splash
+    params:
+      mode: FORWARD
+      speed: 2.2
+      width: 0.5
+      life: 17
+      pierce: 1
+      homing: 0.08
+      item: BLAZE_ROD
+  blood_b:
+    demon: blood
+    slot: 2
+    type: BUFF_SELF
+    name: Bouclier de sang
+    description: Une protection d'absorption temporaire.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 10
+    max-targets: 1
+    particle: DUST:170,0,0:1.3
+    sound: entity.generic.splash
+    params:
+      absorption: 6
+  blood_c:
+    demon: blood
+    slot: 3
+    type: BUFF_SELF
+    name: Régénération
+    description: Restaure une partie de ta vie.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 5
+    max-targets: 1
+    particle: DUST:170,0,0:1.3
+    sound: entity.generic.splash
+    params:
+      heal: 6
+      effects:
+      - regeneration:100:1
+  blood_ult:
+    demon: blood
+    slot: 4
+    type: PROJECTILE
+    name: Tempête de sang
+    description: Plusieurs lances de sang visent les ennemis proches.
+    damage-pvp: 4.5
+    damage-pve: 8
+    range: 26
+    radius: 0.0
+    duration: 0.0
+    max-targets: 5
+    particle: DUST:170,0,0:1.3
+    sound: entity.generic.splash
+    params:
+      mode: AUTO
+      count: 8
+      stagger: 3
+      speed: 2.2
+      width: 0.5
+      life: 12
+      homing: 0.1
+      item: BLAZE_ROD
+      allow-empty: true
+  blood_passive:
+    demon: blood
+    slot: 0
+    type: PASSIVE
+    name: Soif de sang
+    description: Tu récupères 3 PV à chaque ennemi éliminé.
+    params:
+      heal-on-kill: 3
+  war_a:
+    demon: war
+    slot: 1
+    type: BUFF_SELF
+    name: Arme improvisée
+    description: Transforme l'objet autorisé que tu tiens en arme magique (+50 % de dégâts).
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 15
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.hit
+    tags:
+    - weapon
+    params:
+      weapon-items:
+      - STICK
+      - BONE
+      - BLAZE_ROD
+      - '*_SWORD'
+      - '*_AXE'
+      - '*_SHOVEL'
+      - '*_PICKAXE'
+      - '*_HOE'
+      weapon-bonus: 0.5
+  war_b:
+    demon: war
+    slot: 2
+    type: PROJECTILE
+    name: Épée de guerre
+    description: Invoque une épée puissante qui traverse les ennemis.
+    damage-pvp: 8
+    damage-pve: 14
+    range: 32
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.hit
+    tags:
+    - weapon
+    params:
+      mode: FORWARD
+      speed: 1.6
+      width: 0.8
+      life: 20
+      pierce: 1
+      item: NETHERITE_SWORD
+  war_c:
+    demon: war
+    slot: 3
+    type: PROJECTILE
+    name: Lance de guerre
+    description: Lance une arme sur un ennemi.
+    damage-pvp: 6
+    damage-pve: 11
+    range: 40
+    radius: 0.0
+    duration: 0.0
+    max-targets: 1
+    particle: CRIT
+    sound: item.trident.hit
+    tags:
+    - weapon
+    params:
+      mode: FORWARD
+      speed: 2.4
+      width: 0.5
+      life: 17
+      pierce: 2
+      item: TRIDENT
+  war_ult:
+    demon: war
+    slot: 4
+    type: PROJECTILE
+    name: Arsenal de guerre
+    description: Une pluie d'armes s'abat sur la zone visée.
+    damage-pvp: 4
+    damage-pve: 7
+    range: 22
+    radius: 7
+    duration: 0.0
+    max-targets: 8
+    particle: CRIT
+    sound: item.trident.hit
+    tags:
+    - weapon
+    params:
+      mode: SKY
+      count: 20
+      stagger: 2
+      speed: 1.6
+      height: 10
+      item: NETHERITE_SWORD
+      explode: 2.0
+      explode-mult: 1.0
+      life: 80
+  war_passive:
+    demon: war
+    slot: 0
+    type: PASSIVE
+    name: Maître d'armes
+    description: +20 % de dégâts avec les armes invoquées.
+    params:
+      weapon-bonus: 0.2
+  eternity_a:
+    demon: eternity
+    slot: 1
+    type: ZONE
+    name: Boucle temporelle
+    description: Une zone où le temps ralentit.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 16
+    radius: 6
+    duration: 7
+    max-targets: 8
+    particle: DUST:200,160,255:1.2
+    sound: block.beacon.ambient
+    params:
+      center: AIM
+      tick: 10
+      style: DOME
+      effects:
+      - slowness:30:2
+  eternity_b:
+    demon: eternity
+    slot: 2
+    type: ZONE
+    name: Piège dimensionnel
+    description: Enferme les ennemis présents dans une petite zone.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 16
+    radius: 3.5
+    duration: 4
+    max-targets: 4
+    particle: DUST:200,160,255:1.2
+    sound: block.beacon.ambient
+    params:
+      center: AIM
+      tick: 5
+      style: DOME
+      boundary: true
+      effects:
+      - slowness:15:0
+  eternity_c:
+    demon: eternity
+    slot: 3
+    type: BUFF_SELF
+    name: Régénération
+    description: Restaure progressivement ta vie.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 8
+    max-targets: 1
+    particle: DUST:200,160,255:1.2
+    sound: block.beacon.ambient
+    params:
+      heal: 4
+      effects:
+      - regeneration:160:1
+  eternity_ult:
+    demon: eternity
+    slot: 4
+    type: ZONE
+    name: Boucle éternelle
+    description: Une arène temporaire où les ennemis sont piégés et ralentis.
+    damage-pvp: 1.5
+    damage-pve: 3
+    range: 18
+    radius: 10
+    duration: 6
+    max-targets: 8
+    particle: DUST:200,160,255:1.2
+    sound: block.beacon.ambient
+    params:
+      center: AIM
+      tick: 5
+      style: DOME
+      boundary: true
+      effects:
+      - slowness:20:1
+  eternity_passive:
+    demon: eternity
+    slot: 0
+    type: PASSIVE
+    name: Flux temporel
+    description: Récupération de vie accélérée.
+    params:
+      regen-per-cycle: 0.5
+  typhoon_a:
+    demon: typhoon
+    slot: 1
+    type: MELEE_ARC
+    name: Rafale
+    description: Projette les ennemis devant toi.
+    damage-pvp: 2.5
+    damage-pve: 4
+    range: 9
+    radius: 0.0
+    duration: 0.0
+    max-targets: 5
+    particle: CLOUD
+    sound: item.elytra.flying
+    params:
+      angle: 80
+      knockback: 1.7
+      up: 0.6
+  typhoon_b:
+    demon: typhoon
+    slot: 2
+    type: ZONE
+    name: Tornade
+    description: Une petite tornade qui soulève et blesse.
+    damage-pvp: 2.5
+    damage-pve: 5
+    range: 16
+    radius: 3.5
+    duration: 5
+    max-targets: 5
+    particle: CLOUD
+    sound: item.elytra.flying
+    params:
+      center: AIM
+      tick: 5
+      style: VORTEX
+      lift: 0.25
+      pull: 0.2
+  typhoon_c:
+    demon: typhoon
+    slot: 3
+    type: ZONE
+    name: Tempête
+    description: Ralentit les ennemis et les attire.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 16
+    radius: 7
+    duration: 5
+    max-targets: 8
+    particle: CLOUD
+    sound: item.elytra.flying
+    params:
+      center: AIM
+      tick: 5
+      style: VORTEX
+      pull: 0.4
+      effects:
+      - slowness:20:1
+  typhoon_ult:
+    demon: typhoon
+    slot: 4
+    type: ZONE
+    name: Catastrophe
+    description: Une immense tornade ravage la zone.
+    damage-pvp: 3
+    damage-pve: 6
+    range: 20
+    radius: 11
+    duration: 8
+    max-targets: 10
+    particle: CLOUD
+    sound: item.elytra.flying
+    params:
+      center: AIM
+      tick: 5
+      style: VORTEX
+      lift: 0.3
+      pull: 0.45
+      effects:
+      - slowness:20:1
+  typhoon_passive:
+    demon: typhoon
+    slot: 0
+    type: PASSIVE
+    name: Œil du cyclone
+    description: Forte résistance au recul.
+    params:
+      knockback-resist: 0.6
+      attributes:
+        knockback_resistance: 0.8
+  bat_a:
+    demon: bat
+    slot: 1
+    type: REVEAL
+    name: Sonar
+    description: Détecte les ennemis proches.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 20
+    radius: 20
+    duration: 6
+    max-targets: 1
+    particle: DUST:150,150,255:1.0
+    sound: entity.bat.takeoff
+  bat_b:
+    demon: bat
+    slot: 2
+    type: AOE_BURST
+    name: Onde sonore
+    description: Repousse les ennemis autour de toi.
+    damage-pvp: 3
+    damage-pve: 5
+    range: 6
+    radius: 6
+    duration: 0.0
+    max-targets: 6
+    particle: DUST:150,150,255:1.0
+    sound: entity.bat.takeoff
+    params:
+      center: SELF
+      style: RING
+      knockback: 1.3
+      up: 0.3
+  bat_c:
+    demon: bat
+    slot: 3
+    type: BUFF_SELF
+    name: Bond aérien
+    description: Un bond puissant suivi d'un vol plané.
+    damage-pvp: 0
+    damage-pve: 0
+    range: 0
+    radius: 0.0
+    duration: 8
+    max-targets: 1
+    particle: DUST:150,150,255:1.0
+    sound: entity.bat.takeoff
+    params:
+      launch: 0.9
+      effects:
+      - slow_falling:160:0
+      launch-forward: 0.7
+  bat_ult:
+    demon: bat
+    slot: 4
+    type: AOE_BURST
+    name: Cri du prédateur
+    description: Une puissante onde sonore qui projette tout le monde.
+    damage-pvp: 8
+    damage-pve: 14
+    range: 11
+    radius: 11
+    duration: 0.0
+    max-targets: 10
+    particle: DUST:150,150,255:1.0
+    sound: entity.warden.sonic_boom
+    params:
+      center: SELF
+      delay: 8
+      style: RING
+      knockback: 1.8
+      up: 0.5
+      effects:
+      - slowness:40:0
+  bat_passive:
+    demon: bat
+    slot: 0
+    type: PASSIVE
+    name: Ailes agiles
+    description: Vitesse de déplacement +10 %.
+    params:
+      attributes:
+        movement_speed: 0.1
+  bomb_a:
+    demon: bomb
+    slot: 1
+    type: AOE_BURST
+    name: Explosion
+    description: Provoque une explosion contrôlée (sans dégâts au terrain).
+    damage-pvp: 6
+    damage-pve: 10
+    range: 14
+    radius: 4
+    duration: 0.0
+    max-targets: 5
+    particle: FLAME
+    sound: entity.generic.explode
+    params:
+      center: AIM
+      style: EXPLOSION
+      knockback: 1.0
+      up: 0.5
+  bomb_b:
+    demon: bomb
+    slot: 2
+    type: LEAP
+    name: Dash explosif
+    description: Te propulse vers l'avant en laissant une explosion derrière toi.
+    damage-pvp: 4
+    damage-pve: 7
+    range: 0
+    radius: 0.0
+    duration: 0.0
+    max-targets: 4
+    particle: FLAME
+    sound: entity.generic.explode
+    params:
+      mode: FORWARD
+      speed: 1.8
+      lift: 0.25
+      knockback: 0.8
+      burst-start: 3
+      max-ticks: 12
+  bomb_c:
+    demon: bomb
+    slot: 3
+    type: AOE_BURST
+    name: Bombe à retardement
+    description: Place une bombe qui explose après 3 secondes.
+    damage-pvp: 10
+    damage-pve: 16
+    range: 14
+    radius: 5
+    duration: 0.0
+    max-targets: 6
+    particle: FLAME
+    sound: entity.generic.explode
+    params:
+      center: AIM
+      delay: 60
+      marker: TNT
+      style: EXPLOSION
+      knockback: 1.2
+      up: 0.6
+  bomb_ult:
+    demon: bomb
+    slot: 4
+    type: AOE_BURST
+    name: Détonation
+    description: Une immense explosion autour de toi (tu en subis une partie).
+    damage-pvp: 11
+    damage-pve: 20
+    range: 9
+    radius: 9
+    duration: 0.0
+    max-targets: 10
+    particle: FLAME
+    sound: entity.generic.explode
+    params:
+      center: SELF
+      delay: 10
+      style: EXPLOSION
+      knockback: 1.8
+      up: 0.7
+      self-damage: 4
+  bomb_passive:
+    demon: bomb
+    slot: 0
+    type: PASSIVE
+    name: Corps ignifuge
+    description: Dégâts d'explosion réduits de 35 %.
+    params:
+      resist-causes:
+        BLOCK_EXPLOSION: 0.65
+        ENTITY_EXPLOSION: 0.65

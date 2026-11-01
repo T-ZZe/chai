@@ -1,0 +1,88 @@
+# ChainsawRPG - configuration principale (Phase 1)
+# Les autres fichiers : demons.yml, skills.yml, cooldowns.yml, sacrifices.yml, rarities.yml, items.yml, messages.yml
+# /chainsaw reload recharge tout SAUF la section "database" (redemarrage requis).
+
+database:
+  type: sqlite            # sqlite | mysql
+  sqlite-file: chainsawrpg.db
+  mysql:
+    host: localhost
+    port: 3306
+    database: chainsawrpg
+    user: root
+    password: ""
+    params: "useSSL=false&characterEncoding=utf8"
+
+autosave-minutes: 5
+fx-density: 1.0           # 0.1 a 3.0 : multiplicateur du nombre de particules (baisse-le si ca lag)
+
+hud:
+  enabled: true           # action bar : contrat, niveau, sang, competence selectionnee, cooldown
+  interval-ticks: 10
+
+# ---------- Tetes de joueurs ----------
+heads:
+  enabled: true
+  required-for-contract: 9
+  give-directly: true               # false = la tete tombe au sol (reservee au tueur quelques minutes)
+  notify-denied: true               # previent le tueur quand une tete est refusee
+  victim-cooldown-minutes: 120      # une victime ne donne qu'UNE tete par periode (tous tueurs confondus)
+  pair-cooldown-hours: 24           # meme tueur + meme victime : une tete par periode
+  max-per-killer-per-day: 15
+  block-same-ip: true               # anti-comptes secondaires : tueur et victime sur la meme IP = pas de tete
+  min-victim-playtime-minutes: 60   # temps de jeu minimum de la victime (anti-comptes jetables)
+  disabled-worlds: []
+
+# ---------- Contrats ----------
+contracts:
+  require-npc: true                 # le menu des contrats n'est accessible qu'au Marchand (sauf permission bypass)
+  confirm-purchase: true
+  change:                           # rituel de changement de contrat (cout en PLUS du prix normal)
+    extra-heads: 3
+    extra-exp-levels: 5
+    ritual-seconds: 6
+    cancel-on-move: true            # bouger ou subir des degats interrompt le rituel (rien n'est consomme)
+
+# ---------- Progression ----------
+progression:
+  max-level: 50
+  xp-base: 100                      # XP pour passer du niveau L a L+1 = xp-base * L^xp-exponent
+  xp-exponent: 1.6
+  xp-per-skill: 3                   # ultime = x3
+  xp-per-mob-kill: 5
+  damage-per-level-pve: 0.012       # +1.2% par niveau (PvE)
+  damage-per-level-pvp: 0.006       # +0.6% par niveau (PvP) : volontairement plus faible
+
+# ---------- Combat / equilibrage ----------
+combat:
+  global-cooldown-ms: 400           # delai minimum entre deux competences
+  hit-gap-ms: 120                   # une cible ne peut pas recevoir 2 coups de competence plus rapproches (anti-combo)
+  max-hit-damage-pvp: 14            # plafond de degats par coup de competence
+  max-hit-damage-pve: 40
+  max-root-seconds-pvp: 3           # duree max d'immobilisation
+  max-root-seconds-pve: 6
+  root-immunity-seconds: 6          # immunite apres une immobilisation (anti-chain-lock)
+  max-effect-seconds-pvp: 8         # duree max d'un effet de potion inflige a un joueur
+  max-zones-per-player: 2           # zones persistantes simultanees
+  max-projectiles-per-cast: 40
+  aim-assist-degrees: 10
+  target-passive-mobs: false        # false = les competences ignorent les animaux/villageois (sauf s'ils te ciblent)
+  require-line-of-sight: true       # pas d'attaque a travers les murs
+  cast-sneak-hotbar: true           # Shift + touche 1/2/3/4 lance la competence 1/2/3/ultime
+  cast-with-book: true              # Livre des contrats : clic droit = lancer, Shift+clic droit = changer de competence
+  excluded-types: [VILLAGER, WANDERING_TRADER, IRON_GOLEM, SNOW_GOLEM, ALLAY, ARMOR_STAND, ITEM_FRAME]
+
+# ---------- Protection ----------
+protection:
+  spawn:
+    enabled: true
+    radius: 24                      # rayon autour du spawn du monde principal : competences et gain de tetes interdits
+  disabled-worlds: []               # mondes ou les competences sont interdites
+  zones: []                         # exemple : - {world: world, x: 100, y: 64, z: 100, radius: 30}
+
+# ---------- Sang ----------
+blood:
+  max: 1000
+  per-hostile-mob: 3
+  per-player-kill: 25
+  lose-on-death-percent: 10         # 0 = aucune perte

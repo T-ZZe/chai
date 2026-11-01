@@ -1,0 +1,266 @@
+# Coût de chaque compétence. type : HEALTH (PV) | FOOD (faim) | EXP (points d'XP) | BLOOD (sang) | DURABILITY | NONE
+costs:
+  fox_a:
+    type: HEALTH
+    amount: 1.0
+  fox_b:
+    type: HEALTH
+    amount: 2.0
+  fox_c:
+    type: HEALTH
+    amount: 1.5
+  fox_ult:
+    type: HEALTH
+    amount: 6.0
+  ghost_a:
+    type: FOOD
+    amount: 2
+  ghost_b:
+    type: FOOD
+    amount: 3
+  ghost_c:
+    type: FOOD
+    amount: 3
+  ghost_ult:
+    type: FOOD
+    amount: 8
+  curse_a:
+    type: HEALTH
+    amount: 1.0
+  curse_b:
+    type: HEALTH
+    amount: 2.0
+  curse_c:
+    type: HEALTH
+    amount: 1.5
+  curse_ult:
+    type: HEALTH
+    amount: 6.0
+  snake_a:
+    type: FOOD
+    amount: 2
+  snake_b:
+    type: FOOD
+    amount: 3
+  snake_c:
+    type: FOOD
+    amount: 3
+  snake_ult:
+    type: FOOD
+    amount: 8
+  future_a:
+    type: EXP
+    amount: 15
+  future_b:
+    type: EXP
+    amount: 25
+  future_c:
+    type: EXP
+    amount: 20
+  future_ult:
+    type: EXP
+    amount: 150
+  mold_a:
+    type: FOOD
+    amount: 2
+  mold_b:
+    type: FOOD
+    amount: 3
+  mold_c:
+    type: FOOD
+    amount: 3
+  mold_ult:
+    type: FOOD
+    amount: 8
+  stone_a:
+    type: FOOD
+    amount: 2
+  stone_b:
+    type: FOOD
+    amount: 3
+  stone_c:
+    type: FOOD
+    amount: 3
+  stone_ult:
+    type: FOOD
+    amount: 8
+  octopus_a:
+    type: FOOD
+    amount: 2
+  octopus_b:
+    type: FOOD
+    amount: 3
+  octopus_c:
+    type: FOOD
+    amount: 3
+  octopus_ult:
+    type: FOOD
+    amount: 8
+  darkness_a:
+    type: EXP
+    amount: 15
+  darkness_b:
+    type: EXP
+    amount: 25
+  darkness_c:
+    type: EXP
+    amount: 20
+  darkness_ult:
+    type: EXP
+    amount: 150
+  gun_a:
+    type: FOOD
+    amount: 2
+  gun_b:
+    type: FOOD
+    amount: 3
+  gun_c:
+    type: FOOD
+    amount: 3
+  gun_ult:
+    type: FOOD
+    amount: 8
+  punishment_a:
+    type: FOOD
+    amount: 2
+  punishment_b:
+    type: FOOD
+    amount: 3
+  punishment_c:
+    type: FOOD
+    amount: 3
+  punishment_ult:
+    type: FOOD
+    amount: 8
+  claw_a:
+    type: FOOD
+    amount: 2
+  claw_b:
+    type: FOOD
+    amount: 3
+  claw_c:
+    type: FOOD
+    amount: 3
+  claw_ult:
+    type: FOOD
+    amount: 8
+  knife_a:
+    type: FOOD
+    amount: 2
+  knife_b:
+    type: FOOD
+    amount: 3
+  knife_c:
+    type: FOOD
+    amount: 3
+  knife_ult:
+    type: FOOD
+    amount: 8
+  needle_a:
+    type: FOOD
+    amount: 2
+  needle_b:
+    type: FOOD
+    amount: 3
+  needle_c:
+    type: FOOD
+    amount: 3
+  needle_ult:
+    type: FOOD
+    amount: 8
+  mantis_a:
+    type: FOOD
+    amount: 2
+  mantis_b:
+    type: FOOD
+    amount: 3
+  mantis_c:
+    type: FOOD
+    amount: 3
+  mantis_ult:
+    type: FOOD
+    amount: 8
+  fire_a:
+    type: HEALTH
+    amount: 1.0
+  fire_b:
+    type: HEALTH
+    amount: 2.0
+  fire_c:
+    type: HEALTH
+    amount: 1.5
+  fire_ult:
+    type: HEALTH
+    amount: 6.0
+  blood_a:
+    type: BLOOD
+    amount: 8
+  blood_b:
+    type: BLOOD
+    amount: 12
+  blood_c:
+    type: BLOOD
+    amount: 15
+  blood_ult:
+    type: BLOOD
+    amount: 60
+  war_a:
+    type: EXP
+    amount: 15
+  war_b:
+    type: EXP
+    amount: 25
+  war_c:
+    type: EXP
+    amount: 20
+  war_ult:
+    type: EXP
+    amount: 150
+  eternity_a:
+    type: EXP
+    amount: 15
+  eternity_b:
+    type: EXP
+    amount: 25
+  eternity_c:
+    type: EXP
+    amount: 20
+  eternity_ult:
+    type: EXP
+    amount: 150
+  typhoon_a:
+    type: FOOD
+    amount: 2
+  typhoon_b:
+    type: FOOD
+    amount: 3
+  typhoon_c:
+    type: FOOD
+    amount: 3
+  typhoon_ult:
+    type: FOOD
+    amount: 8
+  bat_a:
+    type: FOOD
+    amount: 2
+  bat_b:
+    type: FOOD
+    amount: 3
+  bat_c:
+    type: FOOD
+    amount: 3
+  bat_ult:
+    type: FOOD
+    amount: 8
+  bomb_a:
+    type: HEALTH
+    amount: 1.0
+  bomb_b:
+    type: HEALTH
+    amount: 2.0
+  bomb_c:
+    type: HEALTH
+    amount: 1.5
+  bomb_ult:
+    type: HEALTH
+    amount: 6.0

@@ -1,0 +1,10 @@
+# Raretes : chance = poids du tirage aleatoire (/chainsaw givecontract <joueur> random, menu admin).
+# Ne limite PAS l'obtention directe d'un contrat avec les 9 tetes.
+# color = tag MiniMessage.
+rarities:
+  common:     {name: "Commun",      color: "<#b5b5b5>", chance: 35}
+  uncommon:   {name: "Peu commun",  color: "<green>",   chance: 25}
+  rare:       {name: "Rare",        color: "<aqua>",    chance: 18}
+  epic:       {name: "Épique",      color: "<#b44dff>", chance: 12}
+  legendary:  {name: "Légendaire",  color: "<gold>",    chance: 7}
+  mythic:     {name: "Mythique",    color: "<#ff2d55>", chance: 3}

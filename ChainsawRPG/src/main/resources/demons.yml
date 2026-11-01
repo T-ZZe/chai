@@ -1,0 +1,359 @@
+# Démons. enabled:false = masqué/indisponible. Les identifiants (clés) sont stables : ne les renomme pas.
+# Un démon est automatiquement désactivé si une de ses compétences utilise un type inconnu.
+demons:
+  fox:
+    name: Démon Renard
+    description: Un renard affamé qui dévore ce que tu désignes. Ses têtes invoquées frappent à distance.
+    rarity: uncommon
+    icon: FOX_SPAWN_EGG
+    enabled: true
+    secret: false
+    skills:
+    - fox_a
+    - fox_b
+    - fox_c
+    - fox_ult
+    passive: fox_passive
+  ghost:
+    name: Démon Fantôme
+    description: Des mains invisibles obéissent à ton regard.
+    rarity: rare
+    icon: PHANTOM_MEMBRANE
+    enabled: true
+    secret: false
+    skills:
+    - ghost_a
+    - ghost_b
+    - ghost_c
+    - ghost_ult
+    passive: ghost_passive
+  curse:
+    name: Démon Malédiction
+    description: Chaque coup laisse une marque. Assez de marques, et la sentence tombe.
+    rarity: epic
+    icon: WITHER_ROSE
+    enabled: true
+    secret: false
+    skills:
+    - curse_a
+    - curse_b
+    - curse_c
+    - curse_ult
+    passive: curse_passive
+  snake:
+    name: Démon Serpent
+    description: Un serpent qui avale, écrase et empoisonne.
+    rarity: rare
+    icon: SLIME_BALL
+    enabled: true
+    secret: false
+    skills:
+    - snake_a
+    - snake_b
+    - snake_c
+    - snake_ult
+    passive: snake_passive
+  future:
+    name: Démon du Futur
+    description: Voir ce qui va arriver, c'est déjà l'avoir évité.
+    rarity: legendary
+    icon: CLOCK
+    enabled: true
+    secret: false
+    skills:
+    - future_a
+    - future_b
+    - future_c
+    - future_ult
+    passive: future_passive
+  mold:
+    name: Démon Moisissure
+    description: Une infection qui se propage de corps en corps.
+    rarity: common
+    icon: FERMENTED_SPIDER_EYE
+    enabled: true
+    secret: false
+    skills:
+    - mold_a
+    - mold_b
+    - mold_c
+    - mold_ult
+    passive: mold_passive
+  skin:
+    name: Démon Peau
+    description: Voler l'apparence d'un autre.
+    rarity: rare
+    icon: LEATHER_HELMET
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : apparence / pseudo copiés'
+    skills: []
+    passive: ''
+  doll:
+    name: Démon Poupée
+    description: Des poupées combattantes et des mobs marionnettes.
+    rarity: rare
+    icon: ARMOR_STAND
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : invocations et contrôle de mobs'
+    skills: []
+    passive: ''
+  stone:
+    name: Démon Pierre
+    description: La pierre ne cède pas, et ceux qu'elle touche non plus.
+    rarity: uncommon
+    icon: STONE_BRICKS
+    enabled: true
+    secret: false
+    skills:
+    - stone_a
+    - stone_b
+    - stone_c
+    - stone_ult
+    passive: stone_passive
+  octopus:
+    name: Démon Pieuvre
+    description: Des tentacules qui saisissent, aveuglent et broient.
+    rarity: rare
+    icon: INK_SAC
+    enabled: true
+    secret: false
+    skills:
+    - octopus_a
+    - octopus_b
+    - octopus_c
+    - octopus_ult
+    passive: octopus_passive
+  hell:
+    name: Démon Enfer
+    description: Une main géante, un portail, l'Enfer lui-même.
+    rarity: epic
+    icon: NETHERRACK
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : arènes dimensionnelles'
+    skills: []
+    passive: ''
+  darkness:
+    name: Démon des Ténèbres
+    description: 'Le noir n''est pas l''absence de lumière : c''est un appétit.'
+    rarity: mythic
+    icon: ECHO_SHARD
+    enabled: true
+    secret: false
+    skills:
+    - darkness_a
+    - darkness_b
+    - darkness_c
+    - darkness_ult
+    passive: darkness_passive
+  control:
+    name: Démon Contrôle
+    description: Dominer les mobs, immobiliser les ennemis.
+    rarity: legendary
+    icon: LEAD
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : contrôle de mobs'
+    skills: []
+    passive: ''
+  gun:
+    name: Démon Pistolet
+    description: Une balle n'attend pas qu'on la prépare.
+    rarity: legendary
+    icon: CROSSBOW
+    enabled: true
+    secret: false
+    skills:
+    - gun_a
+    - gun_b
+    - gun_c
+    - gun_ult
+    passive: gun_passive
+  punishment:
+    name: Démon Punition
+    description: Chaque crime a son verdict.
+    rarity: rare
+    icon: GOLDEN_SWORD
+    enabled: true
+    secret: false
+    skills:
+    - punishment_a
+    - punishment_b
+    - punishment_c
+    - punishment_ult
+    passive: punishment_passive
+  claw:
+    name: Démon Griffes
+    description: Rapide, sauvage, imprévisible.
+    rarity: uncommon
+    icon: IRON_SWORD
+    enabled: true
+    secret: false
+    skills:
+    - claw_a
+    - claw_b
+    - claw_c
+    - claw_ult
+    passive: claw_passive
+  knife:
+    name: Démon Couteau
+    description: Des lames qui n'existent que pour trancher.
+    rarity: uncommon
+    icon: FLINT
+    enabled: true
+    secret: false
+    skills:
+    - knife_a
+    - knife_b
+    - knife_c
+    - knife_ult
+    passive: knife_passive
+  needle:
+    name: Démon Aiguille
+    description: Fines, nombreuses, impossibles à ignorer.
+    rarity: uncommon
+    icon: END_ROD
+    enabled: true
+    secret: false
+    skills:
+    - needle_a
+    - needle_b
+    - needle_c
+    - needle_ult
+    passive: needle_passive
+  mantis:
+    name: Démon Mante
+    description: Une faux à la place du bras.
+    rarity: common
+    icon: IRON_HOE
+    enabled: true
+    secret: false
+    skills:
+    - mantis_a
+    - mantis_b
+    - mantis_c
+    - mantis_ult
+    passive: mantis_passive
+  fire:
+    name: Démon Feu
+    description: Une flamme qui devient toi.
+    rarity: epic
+    icon: BLAZE_POWDER
+    enabled: true
+    secret: false
+    skills:
+    - fire_a
+    - fire_b
+    - fire_c
+    - fire_ult
+    passive: fire_passive
+  aging:
+    name: Démon Vieillesse
+    description: Le temps ronge tout, même les dimensions.
+    rarity: mythic
+    icon: SAND
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : arènes dimensionnelles'
+    skills: []
+    passive: ''
+  blood:
+    name: Démon Sang
+    description: Le sang est une arme, un bouclier, un remède.
+    rarity: epic
+    icon: REDSTONE
+    enabled: true
+    secret: false
+    skills:
+    - blood_a
+    - blood_b
+    - blood_c
+    - blood_ult
+    passive: blood_passive
+  war:
+    name: Démon Guerre
+    description: Toute arme est la tienne.
+    rarity: epic
+    icon: NETHERITE_SWORD
+    enabled: true
+    secret: false
+    skills:
+    - war_a
+    - war_b
+    - war_c
+    - war_ult
+    passive: war_passive
+  eternity:
+    name: Démon Éternité
+    description: Un instant qui ne finit pas.
+    rarity: legendary
+    icon: RECOVERY_COMPASS
+    enabled: true
+    secret: false
+    skills:
+    - eternity_a
+    - eternity_b
+    - eternity_c
+    - eternity_ult
+    passive: eternity_passive
+  zombie:
+    name: Démon Zombie
+    description: Une horde qui ne cesse de grandir.
+    rarity: common
+    icon: ROTTEN_FLESH
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : invocations de hordes'
+    skills: []
+    passive: ''
+  typhoon:
+    name: Démon Typhon
+    description: Le vent décide de ce qui reste debout.
+    rarity: rare
+    icon: FEATHER
+    enabled: true
+    secret: false
+    skills:
+    - typhoon_a
+    - typhoon_b
+    - typhoon_c
+    - typhoon_ult
+    passive: typhoon_passive
+  bat:
+    name: Démon Chauve-souris
+    description: Il voit avec ses oreilles et frappe avec sa voix.
+    rarity: common
+    icon: BAT_SPAWN_EGG
+    enabled: true
+    secret: false
+    skills:
+    - bat_a
+    - bat_b
+    - bat_c
+    - bat_ult
+    passive: bat_passive
+  shark:
+    name: Démon Requin
+    description: Il nage dans le sable comme dans l'eau.
+    rarity: common
+    icon: PRISMARINE_SHARD
+    enabled: false
+    secret: false
+    disabled-reason: 'Phase 1B : plongeon à travers les blocs'
+    skills: []
+    passive: ''
+  bomb:
+    name: Démon Bombe
+    description: Tout ce qu'il touche finit en poussière.
+    rarity: epic
+    icon: TNT
+    enabled: true
+    secret: false
+    skills:
+    - bomb_a
+    - bomb_b
+    - bomb_c
+    - bomb_ult
+    passive: bomb_passive

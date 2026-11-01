@@ -1,0 +1,16 @@
+# Objets personnalises (MiniMessage). Placeholders : <victim> <date>
+items:
+  demon_head:
+    name: "<dark_red>Tête de <victim>"
+    lore:
+      - "<gray>Trophée de <white><victim>"
+      - "<gray>Obtenue le <white><date>"
+      - " "
+      - "<dark_gray>Unique, enregistrée et non duplicable."
+      - "<gold>9 têtes = un contrat démoniaque."
+  contract_book:
+    name: "<dark_red><bold>Livre des contrats"
+    lore:
+      - "<gray>Clic droit : lancer la compétence sélectionnée"
+      - "<gray>Shift + clic droit : changer de compétence"
+      - "<gray>Clic gauche : ouvrir le menu"
